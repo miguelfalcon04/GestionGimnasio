@@ -37,6 +37,7 @@ namespace GestionGimnasio
             sqlConnection = new SqlConnection(connectionString);
 
             MuestraGimnasios();
+            MuestraMaquinas();
         }
 
         private void MuestraGimnasios(){
@@ -74,7 +75,7 @@ namespace GestionGimnasio
                 sqlCommand.Parameters.AddWithValue("@GimnasioId", ListaGimnasios.SelectedValue);
                     DataTable MaquinaTabla = new DataTable();
                     sqlDataAdapter.Fill(MaquinaTabla);
-                    ListaMaquinasAsociadas.DisplayMemberPath = "Nombre";
+                    ListaMaquinasAsociadas.DisplayMemberPath = "nombreMaquina";
                     ListaMaquinasAsociadas.SelectedValuePath = "Id";
                     ListaMaquinasAsociadas.ItemsSource = MaquinaTabla.DefaultView;
                 }
@@ -88,6 +89,29 @@ namespace GestionGimnasio
         private void ListaGimnasios_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             MuestraMaquinasAsocidas();
+        }
+
+        private void MuestraMaquinas()
+        {
+            try
+            {
+                string consulta = "Select * from Maquinas";
+                SqlDataAdapter sqlDataAdapter = new
+                SqlDataAdapter(consulta, sqlConnection);
+                using (sqlDataAdapter)
+                {
+                    DataTable maquinaTabla = new DataTable();
+                    sqlDataAdapter.Fill(maquinaTabla);
+
+                    ListaMaquinas.DisplayMemberPath = "nombreMaquina";
+                ListaMaquinas.SelectedValuePath = "Id";
+                ListaMaquinas.ItemsSource = maquinaTabla.DefaultView;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
         }
     }
 }

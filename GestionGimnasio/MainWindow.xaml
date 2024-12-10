@@ -11,6 +11,7 @@
         <ListBox Name="ListaGimnasios" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="16,41,650,238" SelectionChanged="ListaGimnasios_SelectionChanged"/>
         <Label Content="Lista de Maquinas" HorizontalAlignment="Left" Margin="201,10,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="ListaMaquinasAsociadas" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="188,41,478,238"/>
+        <ListBox x:Name="ListaMaquinas" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="514,41,152,157"/>
 
     </Grid>
 </Window>
