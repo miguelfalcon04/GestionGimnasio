@@ -11,7 +11,16 @@
         <ListBox Name="ListaGimnasios" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="16,41,650,238" SelectionChanged="ListaGimnasios_SelectionChanged"/>
         <Label Content="Lista de Maquinas" HorizontalAlignment="Left" Margin="201,10,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="ListaMaquinasAsociadas" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="188,41,478,238"/>
-        <ListBox x:Name="ListaMaquinas" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="514,41,152,157"/>
+        <ListBox x:Name="ListaMaquinas" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="514,41,152,68"/>
+        <Button Content="Eliminar gimnasio" HorizontalAlignment="Left" Margin="29,0,0,0" VerticalAlignment="Center" Height="22" Width="108" Click="EliminarGym_Click"/>
+        <Button Content="Quitar Maquina" HorizontalAlignment="Left" Margin="201,0,0,0" VerticalAlignment="Center" Height="22" Width="108" Click="Button_Click" />
+        <TextBox Name="miTextBox" HorizontalAlignment="Left" Margin="16,243,0,0" TextWrapping="Wrap" Text="Escriba aqui..." VerticalAlignment="Top" Width="306" Height="64"/>
+        <Button Content="Agregar gimnasio" HorizontalAlignment="Left" Margin="29,312,0,0" VerticalAlignment="Top" Height="22" Width="108" Click="AgregarGym_Click"/>
+        <Button Content="Agregar Maquina a Gym" HorizontalAlignment="Left" Margin="173,312,0,0" VerticalAlignment="Top" Height="22" Width="164" Click="AgregarMaquinaGym_Click"/>
+        <Button Content="Actualizar gimnasio" HorizontalAlignment="Left" Margin="29,379,0,0" VerticalAlignment="Top" Height="22" Width="108" Click="ActualizarGym_Click"/>
+        <Button Content="Actualizar Máquina" HorizontalAlignment="Left" Margin="201,379,0,0" VerticalAlignment="Top" Height="22" Width="108" Click="Button_Click"/>
+        <Button Content="Eliminar Maquina" HorizontalAlignment="Left" Margin="527,379,0,0" VerticalAlignment="Top" Height="22" Width="108" Click="EliminarMaquina_Click"/>
+        <Button Content="Agregar Maquina" HorizontalAlignment="Left" Margin="514,12,0,0" VerticalAlignment="Top" Height="22" Width="134" Click="AgregarMaquina_Click"/>
 
     </Grid>
 </Window>
